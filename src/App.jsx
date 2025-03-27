@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <h1 onClick={notify}>
-        Atlan Sql queries frontend Project folder structure setup
+        Atlan Sql queries frontend Project folder structure setup done
       </h1>
       <Home />
       <ToastContainer />
