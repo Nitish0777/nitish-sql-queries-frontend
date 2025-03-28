@@ -10,6 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@codemirror/lang-sql": "^6.8.0",
+    "@codemirror/theme-one-dark": "^6.1.2",
+    "@uiw/react-codemirror": "^4.23.10",
+    "json-2-csv": "^5.5.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-toastify": "^11.0.5"

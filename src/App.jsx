@@ -1,19 +1,7 @@
-import { toast, ToastContainer } from "react-toastify";
-import "./App.css";
 import Home from "./pages/Home";
 
 function App() {
-  const notify = () => toast("Wow so easy!");
-
-  return (
-    <>
-      <h1 onClick={notify}>
-        Atlan Sql queries frontend Project folder structure setup done
-      </h1>
-      <Home />
-      <ToastContainer />
-    </>
-  );
+  return <Home />;
 }
 
 export default App;
