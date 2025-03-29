@@ -65,6 +65,16 @@ const QueryEditor = ({
                 key={index}
                 className="autocomplete-item"
                 onClick={() => handleAutocomplete(q)}
+                style={{
+                  padding: "8px",
+                  borderBottom: "1px solid #ddd",
+                  cursor: "pointer",
+                  backgroundColor: "#fff",
+                }}
+                onMouseEnter={(e) =>
+                  (e.target.style.backgroundColor = "#f0f0f0")
+                }
+                onMouseLeave={(e) => (e.target.style.backgroundColor = "#fff")}
               >
                 {q}
               </div>

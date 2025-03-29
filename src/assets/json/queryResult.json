@@ -3,7 +3,7 @@
     "products": {
         "queries": [
             {
-                "query": "SELECT * FROM products",
+                "query": "SELECT * FROM products;",
                 "id": 1,
                 "data": [
                     {
