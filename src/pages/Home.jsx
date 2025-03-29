@@ -2,15 +2,9 @@ import React, { useState } from "react";
 import QueryEditor from "../components/QueryEditor";
 import ResultTable from "../components/ResultTable";
 import QueryHistory from "../components/QueryHistory";
-import productsData from "../assets/json/product.json";
+import queryResult from "../assets/json/queryResult.json"; 
 
-const predefinedQueries = [
-  "SELECT * FROM products;",
-  "SELECT productName, unitPrice, unitsInStock FROM products WHERE discontinued = 0;",
-  "SELECT productName, quantityPerUnit, unitPrice FROM products WHERE categoryID = 1;",
-  "SELECT productName, unitPrice FROM products WHERE unitsInStock < 20 ORDER BY unitPrice DESC;",
-  "SELECT productName, unitsInStock, reorderLevel FROM products WHERE unitsInStock <= reorderLevel;",
-];
+const predefinedQueries = queryResult.products.queries.map((q) => q.query);
 
 const Home = () => {
   const [queryResults, setQueryResults] = useState([]);
@@ -20,8 +14,11 @@ const Home = () => {
   const handleExecuteQuery = (query) => {
     console.log("Executing query:", query);
     setLoading(true);
+
+    const result = queryResult.products.queries.find((q) => q.query === query);
+
     setTimeout(() => {
-      setQueryResults(productsData);
+      setQueryResults(result ? result.data : []);
       setLoading(false);
     }, 500);
   };
@@ -31,15 +28,16 @@ const Home = () => {
       <div className="sidebar">
         <QueryHistory
           queries={predefinedQueries}
-          onSelectQuery={setCurrentQuery}
+          onSelectQuery={(query) => setCurrentQuery(query)} 
           selectedQuery={currentQuery}
         />
       </div>
       <div className="main-content">
         <QueryEditor
           onExecuteQuery={handleExecuteQuery}
-          currentQuery={currentQuery}
+          currentQuery={currentQuery} 
           onQueryChange={setCurrentQuery}
+          predefinedQueries={predefinedQueries} 
         />
         <ResultTable data={queryResults} loading={loading} />
       </div>

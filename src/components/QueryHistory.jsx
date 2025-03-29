@@ -8,7 +8,7 @@ const QueryHistory = ({ queries, onSelectQuery, selectedQuery }) => {
         <h3>Available Queries</h3>
       </div>
       <div className="history-list">
-        {queries.map((query, index) => (
+        {queries.slice(0, 5).map((query, index) => ( 
           <button
             key={index}
             className={`history-item ${

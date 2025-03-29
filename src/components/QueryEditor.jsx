@@ -1,11 +1,33 @@
+import React, { useState, useEffect } from "react";
 import { run } from "../assets/image";
 import CodeMirror from "@uiw/react-codemirror";
 import { sql } from "@codemirror/lang-sql";
 import { oneDark } from "@codemirror/theme-one-dark";
 
-const QueryEditor = ({ onExecuteQuery, currentQuery, onQueryChange }) => {
+const QueryEditor = ({
+  onExecuteQuery,
+  currentQuery,
+  onQueryChange,
+  predefinedQueries,
+}) => {
+  const [query, setQuery] = useState(currentQuery);
+
+  useEffect(() => {
+    setQuery(currentQuery);
+  }, [currentQuery]);
+
+  const handleInputChange = (value) => {
+    setQuery(value);
+    onQueryChange(value);
+  };
+
+  const handleAutocomplete = (query) => {
+    setQuery(query);
+    onQueryChange(query);
+  };
+
   const handleExecute = () => {
-    onExecuteQuery(currentQuery);
+    onExecuteQuery(query);
   };
 
   return (
@@ -25,13 +47,29 @@ const QueryEditor = ({ onExecuteQuery, currentQuery, onQueryChange }) => {
       </div>
       <div className="editor-container">
         <CodeMirror
-          value={currentQuery}
-          height="200px"
-          theme={oneDark}
+          value={query}
           extensions={[sql()]}
-          onChange={onQueryChange}
-          className="code-mirror-wrapper"
+          theme={oneDark}
+          onChange={(value) => handleInputChange(value)}
+          placeholder="Write your SQL query here..."
+          className="query-textarea"
         />
+        <div className="autocomplete">
+          {predefinedQueries
+            .filter(
+              (q) =>
+                q.toLowerCase().includes(query.toLowerCase()) && q !== query
+            )
+            .map((q, index) => (
+              <div
+                key={index}
+                className="autocomplete-item"
+                onClick={() => handleAutocomplete(q)}
+              >
+                {q}
+              </div>
+            ))}
+        </div>
       </div>
     </div>
   );
