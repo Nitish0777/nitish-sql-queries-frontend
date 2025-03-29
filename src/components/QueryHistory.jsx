@@ -7,6 +7,7 @@ const QueryHistory = ({ queries, onSelectQuery, selectedQuery }) => {
         <img src={history} alt="Run Query" width={16} height={16} />
         <h3>Available Queries</h3>
       </div>
+      <div className="query-message">Select query from dropdown</div>
       <select
         className="history-dropdown"
         value={selectedQuery || ""}
