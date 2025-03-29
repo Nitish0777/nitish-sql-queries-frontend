@@ -150,6 +150,33 @@ body {
   color: white;
 }
 
+.history-dropdown {
+  width: 100%;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+  font-size: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.history-dropdown:hover {
+  border-color: #4f46e5;
+}
+
+.history-dropdown:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 4px rgba(79, 70, 229, 0.5);
+}
+
+.history-dropdown option {
+  padding: 8px;
+  font-size: 12px;
+}
+
 /* Buttons */
 .execute-btn,
 .export-btn {

@@ -7,19 +7,20 @@ const QueryHistory = ({ queries, onSelectQuery, selectedQuery }) => {
         <img src={history} alt="Run Query" width={16} height={16} />
         <h3>Available Queries</h3>
       </div>
-      <div className="history-list">
-        {queries.slice(0, 5).map((query, index) => ( 
-          <button
-            key={index}
-            className={`history-item ${
-              query === selectedQuery ? "selected" : ""
-            }`}
-            onClick={() => onSelectQuery(query)}
-          >
+      <select
+        className="history-dropdown"
+        value={selectedQuery || ""}
+        onChange={(e) => onSelectQuery(e.target.value)}
+      >
+        <option value="" disabled>
+          Select a query...
+        </option>
+        {queries.slice(0, 5).map((query, index) => (
+          <option key={index} value={query}>
             {query.length > 50 ? `${query.substring(0, 50)}...` : query}
-          </button>
+          </option>
         ))}
-      </div>
+      </select>
     </div>
   );
 };
