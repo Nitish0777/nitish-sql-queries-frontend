@@ -13,7 +13,13 @@ const QueryEditor = ({ onExecuteQuery, currentQuery, onQueryChange }) => {
       <div className="editor-header">
         <h2>SQL Editor</h2>
         <button className="execute-btn" onClick={handleExecute}>
-          <img src={run} alt="Run Query" width={16} height={16} />
+          <img
+            src={run}
+            alt="Run Query"
+            width={16}
+            height={16}
+            style={{ filter: "invert(1)" }}
+          />
           Run Query
         </button>
       </div>
