@@ -68,7 +68,7 @@ In the project directory, you can run:
 
 To install all the packages in package.json. This will install all the dependencies and devDependencies.
 
-### `npm ruyn dev`
+### `npm run dev`
 
 Runs the app in the development mode.\
 Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
