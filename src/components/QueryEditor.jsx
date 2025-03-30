@@ -81,6 +81,7 @@ const QueryEditor = ({
             ))}
         </div>
       </div>
+      
     </div>
   );
 };

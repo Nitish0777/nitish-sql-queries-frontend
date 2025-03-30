@@ -1,11 +1,18 @@
 import { history } from "../assets/image";
+import PieChartComponent from "./PieChartComponent";
 
-const QueryHistory = ({ queries, onSelectQuery, selectedQuery }) => {
+const QueryHistory = ({
+  queries,
+  onSelectQuery,
+  selectedQuery,
+  showPieChart,
+  onShowAllProducts,
+}) => {
   return (
     <div className="query-history">
       <div className="history-header">
         <img src={history} alt="Run Query" width={16} height={16} />
-        <h3>Available Queries</h3>
+        <h3 className="history-title">Available Queries</h3>
       </div>
       <div className="query-message">Select query from dropdown</div>
       <select
@@ -22,6 +29,19 @@ const QueryHistory = ({ queries, onSelectQuery, selectedQuery }) => {
           </option>
         ))}
       </select>
+
+      <button
+        className="show-all-products-button styled-button"
+        onClick={onShowAllProducts}
+      >
+        Show All Products
+      </button>
+
+      {showPieChart && (
+        <div className="pie-chart-container">
+          <PieChartComponent />
+        </div>
+      )}
     </div>
   );
 };
