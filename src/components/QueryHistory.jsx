@@ -6,6 +6,7 @@ const QueryHistory = ({
   onSelectQuery,
   selectedQuery,
   showPieChart,
+  executedQuery, // Add executedQuery prop
   onShowAllProducts,
 }) => {
   return (
@@ -37,11 +38,12 @@ const QueryHistory = ({
         Show All Products
       </button>
 
-      {showPieChart && (
-        <div className="pie-chart-container">
-          <PieChartComponent />
-        </div>
-      )}
+      {showPieChart &&
+        executedQuery && ( 
+          <div className="pie-chart-container">
+            <PieChartComponent executedQuery={executedQuery} />{" "}
+          </div>
+        )}
     </div>
   );
 };

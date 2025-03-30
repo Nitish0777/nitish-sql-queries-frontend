@@ -12,11 +12,13 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
   const [currentQuery, setCurrentQuery] = useState(predefinedQueries[0]);
   const [hasExecutedQuery, setHasExecutedQuery] = useState(false);
+  const [executedQuery, setExecutedQuery] = useState(predefinedQueries[0]);
 
   const handleExecuteQuery = (query) => {
     console.log("Executing query:", query);
     setLoading(true);
     setHasExecutedQuery(true);
+    setExecutedQuery(query); 
 
     const result = queryResult.products.queries.find((q) => q.query === query);
 
@@ -39,6 +41,7 @@ const Home = () => {
           onSelectQuery={(query) => setCurrentQuery(query)}
           selectedQuery={currentQuery}
           showPieChart={hasExecutedQuery}
+          executedQuery={executedQuery} 
           onShowAllProducts={handleShowAllProducts}
         />
       </div>
