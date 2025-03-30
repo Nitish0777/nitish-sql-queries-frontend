@@ -19,16 +19,16 @@ Try out the website : [React + Vite SQL Editor](https://nitish-sql-queries-front
 The project leverages the following key dependencies:
 - **@codemirror/lang-sql**
 - **@codemirror/theme-one-dark**
-- **react-toastify**
+- **react-minimal-pie-chart**
 - **json-2-csv**
 - **react-dom**
 
 ## 👨‍💻 Features
 
 :white_check_mark: Users can get data of any of the predefined SQL queries on the left Sidebar from dropdown menu.\
-:white_check_mark: Users can get data of queries that he is seeing in the autocomplete dropdown.\
+:white_check_mark: Users can retrieve data for the queries displayed in the autocomplete dropdown within the CodeMirror SQL editor.\
 :white_check_mark: Users can download the data in CSV Format in just one click.\
-
+:white_check_mark: Visualize query results using a pie chart for better data analysis and insights. This feature is implemented using the react-minimal-pie-chart library.
 
 
 ## ✍️ Predefined SQL Queries
@@ -41,17 +41,17 @@ The project leverages the following key dependencies:
 - `SELECT categoryID, COUNT(*) AS product_count FROM products GROUP BY categoryID;`
 
 ## ⏱ Page Load Time
-![image](https://github.com/user-attachments/assets/13fcfc39-7f38-4c3b-b33e-9d120885973c)
+![image](https://github.com/user-attachments/assets/69e3de80-3efe-4b7f-a05d-e76cfbc45b43)
 
-Page Load time of this website in desktop is in the range of 0.4 s to 0.6s.
+Page Load time of this website in desktop is in the range of 0.4 s to 0.7s.
 
 ### [web.dev Report](https://pagespeed.web.dev/)
 
 Laptop performance view
 
-![image](https://github.com/user-attachments/assets/20a78339-95ad-41dc-a40a-3281ab1c4d19)
+![image](https://github.com/user-attachments/assets/f4460f11-a66e-41d7-8441-9081d64b8739)
 
-## Everything for reference
+## Everything for Reference: Include all relevant materials such as the architecture diagram, ER diagram, explanation document (PDF), and video walkthrough.
 (https://drive.google.com/drive/folders/1Urz7LD3Z31Jy4pR_p5wqw4KJQZz9ECvZ)
 
 
@@ -77,4 +77,4 @@ The page will reload if you make edits.
 
 
 ## 🚀 Project Output
-![image](https://github.com/user-attachments/assets/de5752f0-51d8-430c-89d1-02a3b93bed95)
+![image](https://github.com/user-attachments/assets/573d34b4-60ca-47b6-9fb1-f121158e46be)
