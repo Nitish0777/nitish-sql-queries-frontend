@@ -57,6 +57,9 @@ Laptop performance view
 
 ## 🪜 Steps I took to optimize the page load time
 
+Application Optimization Doc:- https://drive.google.com/file/d/1a2urTguMVoLf0bDeaxv4cI7FnNetD5TV/view?usp=sharing
+Check this optimized Version:- https://github.com/Nitish0777/sql_assignment_optimize
+
 - Used Lighthouse DevTools to identify performance issues and implemented actionable suggestions.
 - Deployed the application on Vercel to leverage its Edge Network for faster load times and optimized delivery.
 
